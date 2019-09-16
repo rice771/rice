@@ -10,21 +10,24 @@ import org.apache.poi.extractor.ExtractorFactory;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-
 /**
- * @Description: 文档读取工具,支持word,pdf,txt
+ * @Description: 文档读取成字符串内容工具类
  * @Author: ln
- * @Date: 2019/8/22 14:14
+ * @Date: 2019/9/16 17:39
  **/
-public class AttachmentReader {
-	private static final String[] WORD= {"doc","docx","xls","xlsx","ppt","pptx"};
-	private static final String PDF ="pdf";
-	private static final String TXT="txt";
+public class AttachmentReaderUtil {
+
+	private static final String[] WORD = {"doc","docx","xls","xlsx","ppt","pptx"};
+	private static final String PDF = "pdf";
+	private static final String TXT = "txt";
+
 	/**
-	 * 文档转换
-	 * @param path 文件路径
-	 * @return 文件内容
-	 */
+	 * @Description: 读取文件
+	 * @Author: ln
+	 * @Date: 2019/9/16 17:40
+	 * @Param [path：文件路径]
+	 * @Return java.lang.String
+	 **/
 	public static String reader(String path) {
 		String text = "";
 		String type =  path.substring(path.lastIndexOf(".")+1).toLowerCase();
@@ -45,13 +48,13 @@ public class AttachmentReader {
 		}
 		return text;
 	}
-	
 	/**
-	 * wrod读取
-	 * @param path 文件路径
-	 * @return 文件内容
-	 */
-	
+	 * @Description: 读取world文件
+	 * @Author: ln
+	 * @Date: 2019/9/16 17:41
+	 * @Param [path：文件路径]
+	 * @Return java.lang.String
+	 **/
 	public static String wordReader(String path) {
 		try {
 			return ExtractorFactory.createExtractor(new File(path)).getText();
@@ -61,12 +64,13 @@ public class AttachmentReader {
 		}
 		
 	}
-	
 	/**
-	 * txt读取
-	 * @param path 文件路径
-	 * @return 文件内容
-	 */
+	 * @Description: 读取txt文件
+	 * @Author: ln
+	 * @Date: 2019/9/16 17:41
+	 * @Param [path：文件路径]
+	 * @Return java.lang.String
+	 **/
 	public static String txtReader(String path) {
 		
 		try {
@@ -82,12 +86,13 @@ public class AttachmentReader {
 		}   
        
 	}
-	
 	/**
-	 * pdf读取
-	 * @param path 文件路径
-	 * @return 文件内容
-	 */
+	 * @Description: 读取pdf文件
+	 * @Author: ln
+	 * @Date: 2019/9/16 17:41
+	 * @Param [path：文件路径]
+	 * @Return java.lang.String
+	 **/
 	public static String pdfReader(String path) {
 		String text = "";
 		FileInputStream is = null;   
@@ -102,7 +107,7 @@ public class AttachmentReader {
 		} catch (Exception e) {
 			throw new RuntimeException(e);
 		}finally {
-			if(null!=is){
+			if(null != is){
 			    
             }
 			try {

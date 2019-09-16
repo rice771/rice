@@ -4,7 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.rice.base.es.bean.FileBean;
 import com.rice.base.es.bean.FileBeanQuery;
 import com.rice.base.es.service.IDocumentService;
-import com.rice.base.util.AttachmentReader;
+import com.rice.base.util.AttachmentReaderUtil;
 import org.apache.http.HttpHost;
 import org.apache.lucene.search.join.ScoreMode;
 import org.elasticsearch.action.delete.DeleteRequest;
@@ -66,7 +66,7 @@ public class DocumentServiceImpl implements IDocumentService {
                 RestClient.builder(new HttpHost("localhost", 9200, "http")));
 
         File file = new File(fileBean.getFilePath());
-        String content = AttachmentReader.reader(fileBean.getFilePath());
+        String content = AttachmentReaderUtil.reader(fileBean.getFilePath());
         fileBean.setContent(content);
         fileBean.setName(file.getName());
         Map<String, Object> map = new HashMap<>();

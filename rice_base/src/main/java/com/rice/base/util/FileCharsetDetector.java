@@ -6,9 +6,10 @@ import org.mozilla.intl.chardet.nsICharsetDetectionObserver;
 import java.io.*;
 
 /**
- * 字符集探测
- * 2017年9月22日
- */
+ * @Description: 字符集探测
+ * @Author: ln
+ * @Date: 2019/9/16 17:50
+ **/
 public class FileCharsetDetector {
 
 	private boolean found = false;

@@ -13,7 +13,7 @@ import java.util.zip.ZipOutputStream;
  * @Date: 2019/8/28 15:44
  * @Version: 1.0
  **/
-public class ZipCompress {
+public class ZipCompressUtil {
     /**
      * 目的地zip文件路径+文件名
      **/
@@ -23,11 +23,11 @@ public class ZipCompress {
      **/
     private String sourceFileName;
 
-    public ZipCompress(String zipFileName, String sourceFileName) {
+    public ZipCompressUtil(String zipFileName, String sourceFileName) {
         this.zipFileName = zipFileName;
         this.sourceFileName = sourceFileName;
     }
-    public ZipCompress() { }
+    public ZipCompressUtil() { }
 
 
     public void zip() throws Exception {
@@ -77,12 +77,12 @@ public class ZipCompress {
         }
     }
 
-    public static void main(String[] args) {
-        ZipCompress zipCom = new ZipCompress("D:\\压缩文件包.zip", "D:\\test");
-        try {
-            zipCom.zip();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+//    public static void main(String[] args) {
+//        ZipCompressUtil zipCom = new ZipCompressUtil("D:\\压缩文件包.zip", "D:\\test");
+//        try {
+//            zipCom.zip();
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//    }
 }
