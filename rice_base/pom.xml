@@ -19,7 +19,7 @@
         <poi.version>3.16</poi.version>
         <commonsio.version>2.4</commonsio.version>
         <icepdf>6.2.3</icepdf>
-        <es.version>6.7.0</es.version>
+        <es.version>6.8.17</es.version>
     </properties>
 
     <dependencies>
